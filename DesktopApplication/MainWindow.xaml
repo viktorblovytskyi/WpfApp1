@@ -16,8 +16,8 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10" Background="Black">
-            <Button Content="Start" Margin="5"/>
-            <Button Content="Stop" Margin="5"/>
+            <Button Content="Start" Margin="5" Command="{Binding StartCommand}"/>
+            <Button Content="Stop" Margin="5" Command="{Binding StopCommand}"/>
         </StackPanel>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="10" Background="Black">
