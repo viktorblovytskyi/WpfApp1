@@ -51,10 +51,13 @@ namespace DesktopApplication.ViewModels
             };
             
             _timer.Tick += Timer_Tick;
-            SpectrumUpdated += OnSpectrumUpdated;
 
             StartCommand = new RelayCommand(_ => Start());
             StopCommand = new RelayCommand(_ => Stop());
+
+#if false
+            SpectrumUpdated += OnSpectrumUpdated;
+#endif
         }
 
         private void Start()

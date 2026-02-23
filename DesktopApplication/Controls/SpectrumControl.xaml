@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:DesktopApplication.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid x:Name="RootGrid" Background="Black" ClipToBounds="True">
+        <local:DrawingVisualHost x:Name="GridHost"/>
+        <local:DrawingVisualHost x:Name="SpectrumHost"/>
     </Grid>
 </UserControl>
