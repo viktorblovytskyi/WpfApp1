@@ -1,3 +1,15 @@
 <Solution>
-  <Project Path="WpfApp1/WpfApp1.csproj" />
+  <Folder Name="/src/" />
+  <Folder Name="/src/Application/">
+    <Project Path="Application/Application.csproj" Id="60d6e734-2e04-4308-97b3-5a315a271f5d" />
+  </Folder>
+  <Folder Name="/src/Domain/">
+    <Project Path="Domain/Domain.csproj" Id="ff8b6af9-7e95-46f7-b5ff-819c3a237cbb" />
+  </Folder>
+  <Folder Name="/src/Infrostructure/">
+    <Project Path="Infrostructure/Infrostructure.csproj" Id="9b8535ee-ef5a-4a31-b007-902cf004ed74" />
+  </Folder>
+  <Folder Name="/src/Presentation/">
+    <Project Path="DesktopApplication/DesktopApplication.csproj" Id="14b4a4af-a535-4f22-a290-88a1789a976e" />
+  </Folder>
 </Solution>

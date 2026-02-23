@@ -361,3 +361,25 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Additional ignores for this solution (WPF, .NET 10, editors, secrets)
+# Ignore recursive build folders
+**/bin/
+**/obj/
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains Rider / IntelliJ
+.idea/
+
+# NuGet global packages folder (local)
+.nuget/packages/
+
+# Dotnet user-secrets and local config
+secrets.json
+appsettings.*.local
+local.settings.json
+
+# Ignore project assets generated during restore/build
+obj/**/project.assets.json
