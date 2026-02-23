@@ -1,0 +1,51 @@
+﻿<Window x:Class="DesktopApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DesktopApplication"
+        xmlns:controls="clr-namespace:DesktopApplication.Controls"
+        mc:Ignorable="d"
+        Title="Desktop Application" Height="800" Width="1200"
+        ResizeMode="NoResize"
+        Background="Black">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10" Background="Black">
+            <Button Content="▶ Start" 
+                    Margin="5" 
+                    Style="{StaticResource StartButtonStyle}"
+                    Command="{Binding StartCommand}" 
+                    IsEnabled="{Binding Path=IsRunning, Converter={StaticResource InverseBooleanConverter}}"/>
+            <Button Content="⏹ Stop" 
+                    Margin="5" 
+                    Style="{StaticResource StopButtonStyle}"
+                    Command="{Binding StopCommand}" 
+                    IsEnabled="{Binding Path=IsRunning}"/>
+        </StackPanel>
+
+        <Border Grid.Row="1" BorderBrush="#3E3E42" BorderThickness="1" Margin="10,5,10,5" Background="Black">
+            <controls:SpectrumControl Margin="5" SpectrumData="{Binding CurrentSpectrum}"/>
+        </Border>
+
+        <Border Grid.Row="2" BorderBrush="#3E3E42" BorderThickness="1" Margin="10,5,10,5" Background="Black">
+            <!--<controls:WaterfallControl SpectrumData="{Binding CurrentSpectrum}"/>-->
+
+            <controls:WaterfallControl SpectrumData="{Binding CurrentSpectrum}">
+                <controls:WaterfallControl.GradientStops>
+                    <GradientStop Offset="0" Color="#0000ff" />
+                    <GradientStop Offset="0.25" Color="#00ffff" />
+                    <GradientStop Offset="0.5" Color="#00ff00" />
+                    <GradientStop Offset="0.75" Color="#ffff00" />
+                    <GradientStop Offset="1" Color="#ff0000" />
+                </controls:WaterfallControl.GradientStops>
+            </controls:WaterfallControl>
+        </Border>
+
+    </Grid>
+</Window>
