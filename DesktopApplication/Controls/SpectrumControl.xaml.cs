@@ -6,7 +6,7 @@ using System.Windows.Shapes;
 
 namespace DesktopApplication.Controls
 {
-    public partial class SpectrumControl : UserControl
+    public partial class SpectrumControl : UserControl, IDisposable
     {
         #region Constants
         private const double MinimumCanvasSize = 10.0;
@@ -385,6 +385,11 @@ namespace DesktopApplication.Controls
                 System.Diagnostics.Debug.WriteLine($"Error creating spectrum geometry: {ex.Message}");
                 return null;
             }
+        }
+
+        public void Dispose()
+        {
+            _updateSemaphore?.Dispose();
         }
     }
 }

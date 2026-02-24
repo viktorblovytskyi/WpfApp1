@@ -20,8 +20,6 @@ namespace DesktopApplication
 
             var services = new ServiceCollection();
 
-            services.AddSingleton<ISpectrumDataProvider, RandomSpectrumProvider>();
-
             services.AddSingleton<ISpectrumDataProvider>(sp =>
                 new RandomSpectrumProvider(
                     dataPointsCount: 1024,
